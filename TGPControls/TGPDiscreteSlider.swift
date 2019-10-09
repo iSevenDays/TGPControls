@@ -317,7 +317,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
         layoutTrack()
     }
 
-    public func drawTicks() {
+    open func drawTicks() {
         ticksLayer.frame = bounds
         let path = UIBezierPath()
 
@@ -408,7 +408,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
         trailingTicksLayer.backgroundColor = maximumTickTintColor?.cgColor ?? maximumTrackTintColor.cgColor
     }
 
-    public func drawTrack() {
+    open func drawTrack() {
         switch(trackComponentStyle) {
         case .rectangular:
             trackLayer.frame = trackRectangle
@@ -462,7 +462,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
         trailingTrackLayer.backgroundColor = maximumTrackTintColor.cgColor
     }
 
-    func drawThumb() {
+    open func drawThumb() {
         if( value >= minimumValue) {  // Feature: hide the thumb when below range
 
             let thumbSizeForStyle = thumbSizeIncludingShadow()
@@ -549,7 +549,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
         }
     }
 
-    func layoutTrack() {
+    open func layoutTrack() {
         assert(tickCount > 1, "2 ticks minimum \(tickCount)")
         let segments = max(1, tickCount - 1)
         let thumbWidth = thumbSizeIncludingShadow().width
