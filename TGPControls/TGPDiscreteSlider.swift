@@ -230,11 +230,11 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
     var thumbAbscissa:CGFloat = 0
     var thumbLayer = CALayer()
 
-    var trackLayer = CALayer()
-    var leftTrackLayer = CALayer()
-    var rightTrackLayer = CALayer()
-    var leadingTrackLayer: CALayer!
-    var trailingTrackLayer: CALayer!
+    public var trackLayer = CALayer()
+    public var leftTrackLayer = CALayer()
+    public var rightTrackLayer = CALayer()
+    public var leadingTrackLayer: CALayer!
+    public var trailingTrackLayer: CALayer!
 
     var ticksLayer = CALayer()
     var leftTicksLayer = CALayer()
@@ -276,7 +276,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
 
     // MARK: TGPDiscreteSlider
 
-    func initProperties() {
+    public func initProperties() {
         if let systemLocale = CFLocaleCopyCurrent(),
             let localeIdentifier = CFLocaleGetIdentifier(systemLocale) {
             localeCharacterDirection = CFLocaleGetLanguageCharacterDirection(localeIdentifier.rawValue)
@@ -317,7 +317,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
         layoutTrack()
     }
 
-    func drawTicks() {
+    public func drawTicks() {
         ticksLayer.frame = bounds
         let path = UIBezierPath()
 
@@ -408,7 +408,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
         trailingTicksLayer.backgroundColor = maximumTickTintColor?.cgColor ?? maximumTrackTintColor.cgColor
     }
 
-    func drawTrack() {
+    public func drawTrack() {
         switch(trackComponentStyle) {
         case .rectangular:
             trackLayer.frame = trackRectangle
