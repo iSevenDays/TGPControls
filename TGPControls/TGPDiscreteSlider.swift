@@ -276,7 +276,7 @@ open class TGPDiscreteSlider:TGPSlider_INTERFACE_BUILDER {
 
     // MARK: TGPDiscreteSlider
 
-    public func initProperties() {
+    open func initProperties() {
         if let systemLocale = CFLocaleCopyCurrent(),
             let localeIdentifier = CFLocaleGetIdentifier(systemLocale) {
             localeCharacterDirection = CFLocaleGetLanguageCharacterDirection(localeIdentifier.rawValue)
